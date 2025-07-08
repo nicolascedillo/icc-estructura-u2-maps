@@ -13,6 +13,7 @@ public class Mapa {
     }
 
     public void ejemploConHashMap() {
+        System.out.println("-------Ejercicio 1--------");
         // Con String y String
         Map<String, String> capitales = new HashMap<>();
         capitales.put("Ecuador","Quito");
@@ -61,6 +62,7 @@ public class Mapa {
     }
 
     public void ejemploConTreeMap() {
+        System.out.println("-------Ejercicio 2--------");
         // Con Integer y String
         Map<Integer, String> personas = new TreeMap<>();
         personas.put(1, "Juan");
@@ -79,7 +81,7 @@ public class Mapa {
 
         // Mapa de empleado, con Empleado y Integer
         
-        Map<Empleado,Integer> empleadoDos = new TreeMap<>();
+        Map<Empleado,Integer> empleadoDos = new TreeMap<Empleado,Integer>();
 
         Empleado emp1 = new Empleado(1, "Ana", "Dev");
         Empleado emp2 = new Empleado(2, "Pedro","Tester");
@@ -93,10 +95,11 @@ public class Mapa {
 
         for(Map.Entry<Empleado,Integer> entry : empleadoDos.entrySet()){
             System.out.println(entry.getKey() + " => " + entry.getValue());
-        }        
+        }
     }
 
     public void ejemploConLinkedMap() {
+        System.out.println("-------Ejercicio 3--------");
         // Con String y Integer
         Map<String,Integer> productos = new LinkedHashMap<>();
         productos.put("Manzana", 100);

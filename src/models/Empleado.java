@@ -1,6 +1,6 @@
 package models;
 
-public class Empleado {
+public class Empleado implements Comparable<Empleado> {
     private int id;
     private String name;
     private String position;
@@ -54,6 +54,17 @@ public class Empleado {
         } else if (!name.equals(other.name))
             return false;
         return true;
+    }
+
+    @Override
+    public int compareTo(Empleado empleado) {
+        int resultadoId = Integer.compare(this.id, empleado.id);
+        if (resultadoId != 0) {
+            return resultadoId;
+        }
+
+        int resultadoNombre = this.name.compareTo(empleado.name);
+        return resultadoNombre;
     }
 
     

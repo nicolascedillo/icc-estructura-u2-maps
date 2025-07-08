@@ -8,6 +8,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         // Ejecuta el ejemplo de uso de HashMap con ejemplos sencillos
+        System.out.println("Nombre: Nicolas Cedillo");
         runMapExamlpe();
 
         // Ejecuta el ejemplo de gestión de empleados usando HashMap
