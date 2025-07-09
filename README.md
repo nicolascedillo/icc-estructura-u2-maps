@@ -161,5 +161,106 @@ Para administrar un directorio telefónico sin claves duplicadas y ordenado por 
 ### DAO y EmpleadoController
 ![ResultadoDAO](./captura_DAO.png)
 
-----
+---
 
+## Ejercicios
+Salida:
+```plaintext
+EJERCICIOS:
+
+        Anagramas
+Listen y silent: true
+Hello y Bello: false
+Triangle y Integral: true
+
+        Suma de dos
+Input: nums = [9,2,3,6], objetivo = 5:
+1|2|
+Input: nums = [9,2,3,6], objetivo = 5: null
+
+        Contar Caracteres
+h = 1 | o = 1 | l = 1 | a = 4 |
+
+        Anagramas
+Amor y roma: true
+Hola y Halo: true
+```
+### Ejercicio 1:
+```java
+    public static boolean areAnagrams(String str1, String str2) {
+        if (str1 == null || str2 == null || str1.length() != str2.length()) {
+            return false; // Si no tienen la misma longitud, es falso
+        }
+
+        Map<Character, Integer> frase1 = new HashMap<>();
+        Map<Character, Integer> frase2 = new HashMap<>();
+
+        for (Character c : str1.toCharArray()) {
+            frase1.put(c, frase1.getOrDefault(c, 0) + 1); // Se agrega los char de la primera
+        }
+
+        for (Character c : str2.toCharArray()) {
+            frase2.put(c, frase2.getOrDefault(c, 0) + 1); // Se agrega los char de la segunda
+        }
+        return frase1.equals(frase2); // Compara si son iguales
+    }
+```
+### Ejercicio 2:
+```java
+    public int[] sumatoriaDeDos(int[] nums, int objetivo) {
+        Map<Integer, Integer> mapa = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            int comp = objetivo - nums[i]; // Encuentra el complemento para llegar al objetivo
+
+            if (mapa.containsKey(comp)) { 
+                return new int[] { mapa.get(comp), i }; 
+                // Si ya esta en el mapa, retorna su valor con el del char actual
+            }
+
+            mapa.put(nums[i], i); // Agrega la key y el value al mapa
+        }
+        return null;
+    }
+```
+### Ejercicio 3:
+```java
+    public void contarCaracteres(String texto) {
+        Map<Character, Integer> mapa = new LinkedHashMap<>();
+        for (Character c : texto.toCharArray()) {
+            if (mapa.containsKey(c)) { // Si ya esta en el mapa
+                int n = mapa.get(c) + 1; // Suma 1 al valor actual
+                mapa.replace(c, n); // Lo remplaza
+            } else {
+                mapa.put(c, 1); // Agrega al mapa con el valor de 1
+            }
+        }
+
+        for (Map.Entry<Character, Integer> entry : mapa.entrySet()) {
+            System.out.print(entry.getKey() + " = " + entry.getValue() + " | ");
+            // Imprime cada llave con su valor
+        }
+        System.out.println("\n");
+    }
+```
+### Ejercicio 4:
+```java
+    public boolean sonAnagramas(String palabra1, String palabra2) {
+        if (palabra1 == null || palabra2 == null || palabra1.length() != palabra2.length()) {
+            return false; // Si no tienen la misma longitud, es falso
+        }
+
+        Map<Character, Integer> frase1 = new HashMap<>();
+        Map<Character, Integer> frase2 = new HashMap<>();
+
+        for (Character c : palabra1.toCharArray()) {
+            frase1.put(c, frase1.getOrDefault(c, 0) + 1); // Se agrega los char de la primera
+        }
+
+        for (Character c : palabra2.toCharArray()) {
+            frase2.put(c, frase2.getOrDefault(c, 0) + 1); // Se agrega los char de la segunda
+        }
+        return frase1.equals(frase2); // Compara si son iguales
+    }
+```
+----

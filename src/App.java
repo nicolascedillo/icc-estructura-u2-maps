@@ -17,7 +17,7 @@ public class App {
         runEmpleadoExample();
 
         // Ejecuta los ejercicios de sumatoria y anagramas
-        runEjerccios();{}
+        runEjerccios();
     }
 
     private static void runEmpleadoExample() {
@@ -65,9 +65,26 @@ public class App {
         System.out.println("\nEJERCICIOS:");
         Ejercicios ejercicios = new Ejercicios();
 
+        System.out.println("\n\tAnagramas");
+        System.out.println("Listen y silent: " + Ejercicios.areAnagrams("listen", "silent"));
+        System.out.println("Hello y Bello: " + Ejercicios.areAnagrams("hello", "bello"));
+        System.out.println("Triangle y Integral: " + Ejercicios.areAnagrams("triangle", "integral"));
+
+        System.out.println("\n\tSuma de dos");
+        System.out.println("Input: nums = [9,2,3,6], objetivo = 5: ");
+        int[] nums = ejercicios.sumatoriaDeDos(
+                new int[] { 9, 2, 3, 6 }, 5);
+        for (int num : nums) {
+            System.out.print(num + "|");
+        }
+        System.out.println("\nInput: nums = [9,2,3,6], objetivo = 5: " + ejercicios.sumatoriaDeDos(
+                new int[] { 9, 2, 3, 6 }, 10));
+
+        System.out.println("\n\tContar Caracteres");
+        ejercicios.contarCaracteres("holaaaa");
+
         System.out.println("\tAnagramas");
-        System.out.println("Listen y silent: "+Ejercicios.areAnagrams("listen", "silent"));
-        System.out.println("Hello y Bello: "+Ejercicios.areAnagrams("hello", "bello"));
-        System.out.println("Triangle y Integral: "+Ejercicios.areAnagrams("triangle", "integral"));
+        System.out.println("Amor y roma: " + ejercicios.sonAnagramas("amor", "roma"));
+        System.out.println("Hola y Halo: " + ejercicios.sonAnagramas("hola", "halo"));
     }
 }
