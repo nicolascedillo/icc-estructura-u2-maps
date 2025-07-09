@@ -1,6 +1,5 @@
 package controllers;
 
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -65,6 +64,7 @@ public class Mapa {
         System.out.println("-------Ejercicio 2--------");
         // Con Integer y String
         Map<Integer, String> personas = new TreeMap<>();
+        // Puede tener un comparador o una clase comparable
         personas.put(1, "Juan");
         personas.put(2, "Maria");
         personas.put(3, "Pedro");

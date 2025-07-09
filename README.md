@@ -156,5 +156,10 @@ Para administrar un directorio telefónico sin claves duplicadas y ordenado por 
 ### Imagenes
 ![Resultado](./foto%201.png)
 ![Resultado2](./foto%202.png)
+---
+
+### DAO y EmpleadoController
+![ResultadoDAO](./captura_DAO.png)
+
 ----
 

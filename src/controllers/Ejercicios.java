@@ -1,6 +1,7 @@
 package controllers;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Ejercicios {
 
@@ -13,7 +14,7 @@ public class Ejercicios {
      * Ejemplo 1:
      * Input: str1 = "listen", str2 = "silent"
      * Output: true
-     * Explicación: Ambas cadenas tienen los mismos caracteres con la misma
+     * Explicación: Ambas cadenas tienen los mismos caracteres con la mismaP
      * frecuencia.
      *
      * Ejemplo 2:
@@ -28,8 +29,17 @@ public class Ejercicios {
      * frecuencia.
      */
     public static boolean areAnagrams(String str1, String str2) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        Map<Character, Integer> frase1 = new HashMap<>();
+        Map<Character, Integer> frase2 = new HashMap<>();
 
+        for (Character c : str1.toCharArray()) {
+            frase1.put(c, frase1.getOrDefault(c, 0) + 1);
+        }
+        
+        for (Character c : str2.toCharArray()) {
+            frase2.put(c, frase2.getOrDefault(c, 0) + 1);
+        }
+        return frase1.equals(frase2);
     }
 
     /*
